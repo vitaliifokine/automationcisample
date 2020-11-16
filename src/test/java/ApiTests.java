@@ -25,6 +25,7 @@ public class ApiTests {
                 when().
                 get("https://www.google.com/maps/").
                 then().extract().body().asString();
+        System.out.println(body);
 
 
     }

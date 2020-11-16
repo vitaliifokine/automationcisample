@@ -7,6 +7,7 @@ public class UnitTests {
     public void testAddition(){
         int addition = 5 + 5;
         Assert.assertEquals(addition, 10);
+        System.out.println(addition);
     }
 
 }
