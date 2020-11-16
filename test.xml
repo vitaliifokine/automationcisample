@@ -3,7 +3,7 @@
 <suite name="example suite 1" verbose="1" >
     <test name="Regression suite" >
         <classes>
-            <class name="ChromeTest"></class>
+            <class name="UiTests"></class>
         </classes>
     </test>
 </suite>

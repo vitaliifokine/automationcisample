@@ -20,5 +20,22 @@ public class ApiTests {
                 get("http://ergast.com/api/f1/2017/circuits.json").
                 then().extract().body().asString();
         Allure.description("Formula 1 Gran Prix  " + body);
+
+        String text = given().
+                when().
+                get("https://www.google.com/maps/").
+                then().extract().body().asString();
+
+
+    }
+    @Test(description = "Google Maps")
+    public void maps(){
+        String text = given().
+                when().
+                get("https://www.google.com/maps/").
+                then().extract().body().asString();
+        System.out.println(text);
+
+
     }
 }
