@@ -1,5 +1,5 @@
+import entities.Urls;
 import io.github.bonigarcia.wdm.WebDriverManager;
-import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
 import org.openqa.selenium.OutputType;
@@ -33,15 +33,19 @@ public class ChromeTest {
         }
     }
 
-    @Test
-    public void test() throws IOException {
-       driver.get("https://mvnrepository.com/");
-       captureScreenshot();
+    @Test(description = "Navigate and check", dataProvider = "urls", dataProviderClass = Urls.class)
+    public void test(String urls) throws IOException {
+       navigateAndCheckUrl(urls);
     }
 
-    @Step("Make a screenshot")
+    @Step("Validate url")
+    private void navigateAndCheckUrl(String url) throws IOException {
+        driver.get(url);
+        captureScreenshot();
+    }
+
     @Attachment
-    public byte[] captureScreenshot()throws IOException {
+    private byte[] captureScreenshot()throws IOException {
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 }
