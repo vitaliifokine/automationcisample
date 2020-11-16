@@ -44,7 +44,7 @@ public class GoogleMapsPage extends BasePage {
         to.sendKeys(Keys.ENTER);
         waitUntilDisplayedBy(driver, tripTime);
         System.out.println("Using public transportation Currently from location: "+from+" to location: "+destination+" is: "+tripTime.getText());
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
         captureScreenshot(driver);
         return this;
     }
