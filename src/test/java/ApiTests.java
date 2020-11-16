@@ -28,14 +28,9 @@ public class ApiTests {
 
 
     }
+
     @Test(description = "Google Maps")
     public void maps(){
-        String text = given().
-                when().
-                get("https://www.google.com/maps/").
-                then().extract().body().asString();
-        System.out.println(text);
-
 
     }
 }
