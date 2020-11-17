@@ -36,7 +36,7 @@ public class UiTests {
     }
 
     @Test(description = "Navigate and check", dataProvider = "urls", dataProviderClass = Urls.class)
-    public void test(String urls) throws IOException {
+    public void test(String urls) {
        navigateAndCheckUrl(urls);
     }
 
@@ -56,13 +56,13 @@ public class UiTests {
     }
 
     @Step("Validate url")
-    private void navigateAndCheckUrl(String url) throws IOException {
+    private void navigateAndCheckUrl(String url) {
         driver.get(url);
         captureScreenshot();
     }
 
     @Attachment
-    private byte[] captureScreenshot()throws IOException {
+    private byte[] captureScreenshot() {
         return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 }

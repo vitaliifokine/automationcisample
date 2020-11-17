@@ -7,8 +7,6 @@ public class Urls {
     public static Object[][] urls() {
         return new Object[][] {
                 {"https://www.google.com/" },
-                {"https://www.yahoo.com/"},
-                {"https://www.bing.com/"},
                 {"https://www.un.org/en/"},
                 {"https://en.wikipedia.org/wiki/Main_Page"}
         };
